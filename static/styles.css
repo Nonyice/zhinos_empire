@@ -1,0 +1,232 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c1c1c;
+    color: white;
+    padding: 1rem;
+}
+
+/* Logo */
+.logo img {
+    width: 100px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+}
+
+.hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    
+}
+
+.hero {
+    background: url('../static/images/zhinos_hero1.png') no-repeat center center/cover;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(250, 5, 5);
+    position: relative;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+.cta-button {
+    background: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background: #cc5200;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    height: 150px;
+    padding-top: 45px;
+    padding: 5px 0px;
+}
+
+
+
+.footer-note p {
+    font-size: .9rem;
+    color: #bcb8b8;
+    line-height: 1.6;
+    margin-top: 0;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+
+.footer-note strong {
+    color: #e91e63;
+}
+
+.poweredby {
+    width: 100%;
+    background-color: black;
+    margin-top: 0px;
+    position: relative;
+    font-size: 12px;
+    padding: 1px;
+    height: 40px;
+}
+
+.footer-socials {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.footer-socials a {
+    margin: 20px;
+    color: aliceblue;
+    height: 30px;
+    width: 30px;
+}
+
+
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+        top: 86px;
+        left: 5px;
+        background: #333;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        padding: 5px;
+        display: flex;
+    }
+
+    nav ul li a:hover {
+        color: cornflowerblue;
+    }
+
+    .hamburger {
+        display: flex;
+        width: 45px;
+        padding-left: 5px;
+    }
+    
+
+
+    nav.active ul {
+        display: block;
+    }
+
+    footer {
+        margin-top: 150px;
+        height: auto;
+        margin-top: auto;
+    }
+
+}

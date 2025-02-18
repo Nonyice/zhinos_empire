@@ -45,27 +45,37 @@ def get_db_connection():
 
 
 
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/get-started")
+def get_started():
+    return "<h2>Welcome to Zhinos Empire! Let's Get Started</h2>"
 
 
 
-# Password validation function
-def validate_password(password):
-    # Regex to ensure password is 6 characters long, contains at least one number and one special character
-    pattern = r'^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$'  # Minimum 6 characters
-
-    return re.match(pattern, password)
-
-
-
-#Retrieve smtp configuration
-SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-SMTP_PORT = os.environ.get('SMTP_PORT', '587')
-SMTP_USERNAME = os.environ.get('SMTP_USERNAME', 'shopwithsharpyglam@gmail.com')
-SMTP_PASSWORD=keyring.get_password('smtp.gmail.com', SMTP_USERNAME)
 
 
 
 
 
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     app.run(debug=True)
+
+
