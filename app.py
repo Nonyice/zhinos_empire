@@ -1,6 +1,5 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, session, jsonify
 from itsdangerous import URLSafeTimedSerializer
-import random
 import psycopg2
 import psycopg2.extras
 import keyring
@@ -13,21 +12,20 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from psycopg2 import sql, errors
-from math import ceil
 from werkzeug.utils import secure_filename
 
 
 
 
 # Fetching credentials from keyring
-db_username = keyring.get_password('nne_shop', 'db_username')
-db_password = keyring.get_password('nne_shop', 'db_password')
+db_username = keyring.get_password('postgresql', 'username')
+db_password = keyring.get_password('postgresql', 'password')
 
 # Initializing Flask app
 app = Flask(__name__, static_url_path='/static')
 
 # Fetching the secret key from keyring
-app.config['SECRET_KEY'] = keyring.get_password('nne_shop', 'secret_key')
+app.config['SECRET_KEY'] = keyring.get_password('zhinos_empire', 'secret_key')
 
 # For local development, you can fall back on environment variables for other settings.
 # For production, Heroku will provide these as config vars.
@@ -35,7 +33,7 @@ app.config['DB_HOST'] = os.getenv('DB_HOST', 'localhost')  # Use 'localhost' for
 app.config['DB_PORT'] = os.getenv('DB_PORT', '5432')  # Default port for PostgreSQL
 
 # Build the database connection string dynamically using credentials from keyring and environment variables
-app.config['DB_CONN_STRING'] = f"dbname='nne_shop' user='{db_username}' password='{db_password}' host='{app.config['DB_HOST']}' port='{app.config['DB_PORT']}'"
+app.config['DB_CONN_STRING'] = f"dbname='zhinos_empire_db' user='{db_username}' password='{db_password}' host='{app.config['DB_HOST']}' port='{app.config['DB_PORT']}'"
 
 
 
