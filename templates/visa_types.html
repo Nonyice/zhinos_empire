@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visa Types and Countries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f5f5f5;
+        }
+
+        .return a {
+            text-decoration: none;
+            margin-left: 95%;
+            color: blue;
+            font-size: 20px;
+            font-family: cursive;
+            font-weight: bold
+        }
+
+        .return a:hover {
+            color: green;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .accordion {
+            width: 100%;
+            margin: auto;
+        }
+        .accordion-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .accordion-header:hover {
+            background-color: #f5f467;
+        }
+        .accordion-header {
+            padding: 7px;
+            cursor: pointer;
+            background-color: #eaeaea;
+            border-bottom: 1px solid #ccc;
+        }
+        .accordion-content {
+            padding: 15px;
+            display: none;
+        }
+        .accordion-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .accordion-content ul li {
+            padding: 5px 0;
+        }
+        .accordion-content ul li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 1000px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .container {
+                width: 100%;
+                padding: 2px;
+            }
+            .return a {
+                margin-left: 92%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Visa Types and Countries</h1>
+
+<div class="container">
+    <div class="accordion">
+        {% for visa_type, countries in visa_info.items() %}
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h2>{{ visa_type }}</h2>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    {% for country, url in countries.items() %}
+                    <li><a href="{{ url }}" target="_blank">{{ country }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+    <div class="return"><a href="/services">Back</a></div>
+    
+    
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const allContents = document.querySelectorAll('.accordion-content');
+            allContents.forEach(item => {
+                if (item !== content) {
+                    item.style.display = 'none';
+                }
+            });
+            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+    
+</div>
+
+
+</body>
+</html>

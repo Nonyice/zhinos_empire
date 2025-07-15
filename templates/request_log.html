@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Request Log - Zhinos Empire{% endblock %}
+
+{% block content %}
+<section class="request-log">
+    <h2>Client Requests</h2>
+    <p>Please for a better and clearer view use a screen with a wider resolution</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Surname</th>
+                <th>Other Names</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Request</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+            <tr>
+                <td>{{ request[1] }}</td>
+                <td>{{ request[2] }}</td>
+                <td>{{ request[3] }}</td>
+                <td>{{ request[4] }}</td>
+                <td>{{ request[5] }}</td>
+                <td>{{ request[6] }}</td>
+                <td>{{ request[7] }}</td>
+                <td>{{ request[8] }}</td>
+
+                <td>
+                    <form action="{{ url_for('update_request_status', request_id=request[0]) }}" method="post">
+                        <select name="status" required>
+                            <option value="Pending" {% if request[7] == 'Pending' %}selected{% endif %}>Pending</option>
+                            <option value="Resolved" {% if request[7] == 'Resolved' %}selected{% endif %}>Resolved</option>
+                            <option value="Agency Declined" {% if request[7] == 'Agency Declined' %}selected{% endif %}>Agency Declined</option>
+                            <option value="Client Declined" {% if request[7] == 'Client Declined' %}selected{% endif %}>Client Declined</option>
+                        </select>
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<div class="return" style="width: 10%; background-color: blue; display: flex; float: right; margin-right: 3%; padding: 5px 8px; margin-top: -20px"><a href="/dashboard">Return</a></div>
+{% endblock %}

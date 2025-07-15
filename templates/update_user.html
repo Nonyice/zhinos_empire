@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Update User{% endblock %}
+
+{% block content %}
+<section class="form-section">
+    <h2>Update User Password</h2>
+    <form method="POST" action="{{ url_for('update_user') }}">
+        <label for="username">Select User:</label>
+        <select name="username" id="username" required>
+            {% for user in users %}
+            <option value="{{ user }}">{{ user }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="new_password">New Password:</label>
+        <input type="password" name="new_password" id="new_password" required>
+
+        <button type="submit" class="admin-btn">Update Password</button>
+    </form>
+</section>
+<div class="return" style="width: 10%; background-color: blue; display: flex; float: right; margin-right: 3%; padding: 5px 8px; margin-top: -20px"><a href="/dashboard">Return</a></div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+
+{% block content %}
+{% if 'user_id' in session %}
+
+<div class="session-user">
+    Welcome, {{ session['username'] }}! 
+</div>
+
+
+{% endif %}
+
+
+<section class="admin-dashboard">
+    {% if 'user_id' in session %}
+    
+    
+
+    <div class="admin-actions">
+        <h2>Admin Dashboard</h2>
+
+    <div class="admin-role">
+        <a href="{{ url_for('manage_users') }}" class="admin-btn">Create User</a>
+    </div>
+
+
+    <div class="admin-role">
+        <a href="{{ url_for('delete_user') }}" class="admin-btn">Remove User</a>
+
+    </div>
+
+    
+
+    <div class="admin-role">
+        <a href="{{ url_for('manage_reviews') }}" class="admin-btn">Manage Reviews</a>
+    </div>
+
+    <div class="admin-role">
+        <a href="{{ url_for('request_log') }}" class="admin-btn">View Requests</a>
+    </div>
+
+
+    </div>
+    
+        
+        
+    {% else %}
+    <section class="login-form">
+        <h2>Authorized Login</h2>
+    <img src="/static/images/avatar.jpg">
+    <p>This section is for authorized users. Kindly contact admin if you are denied access.</p><br><br>
+    
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+    
+            <button type="submit">Login</button>
+        </form>
+    </section>
+    {% endif %}
+    
+<div class="return" style="width: 10%; background-color: blue; display: flex; float: right; margin-right: 3%; padding: 5px 8px; margin-top: -20px"><a href="/">Return</a></div>
+</section>
+
+
+
+
+
+{% endblock %}

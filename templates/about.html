@@ -1,23 +1,99 @@
 {% extends 'base.html' %}
 
-{% block title %}About Us{% endblock %}
+{% block title %}About Us - Zhinos Empire Ltd{% endblock %}
 
 {% block content %}
 <section class="about">
-    <h2>About Zhinos Empire</h2>
-    <p>We are a top-tier consultancy firm specializing in visa inquiries, travel bookings, and hospitality services.</p>
+    <div class="container">
+        <h2>About Zhinos Empire Ltd</h2>
+        <p>Zhinos Empire Ltd is a premier consulting and travel solutions firm dedicated to providing seamless visa inquiries, travel bookings, and hospitality services. With a commitment to excellence and customer satisfaction, we strive to make global mobility effortless for individuals and businesses alike.</p>
+        <img src="/static/images/abt_img.png"><br>
 
-    <h3>Our Vision</h3>
-    <p>To be the most trusted and reliable travel and consultation agency worldwide.</p>
+        <div class="tiles">
+            <div class="tile">
 
-    <h3>Our Mission</h3>
-    <p>To provide exceptional service and seamless travel solutions to our clients.</p>
+            <h3>Our Vision</h3>
+            <p>To be the most trusted and reliable travel and consultation agency worldwide, offering innovative solutions and unmatched service quality.</p>
+            </div>
+            
+            <div class="tile">
+                <h3>Our Mission</h3>
 
-    <h3>Our Team</h3>
-    <ul>
-        <li><strong>CEO:</strong> John Doe</li>
-        <li><strong>COO:</strong> Jane Smith</li>
-        <li><strong>Head of Operations:</strong> Michael Johnson</li>
-    </ul>
-</section>
+                <p>To provide tailored, efficient, and stress-free travel experiences through expert consultation, professional assistance, and cutting-edge solutions.</p>
+            </div>
+
+            <div class="tile">
+            <h3>Why Choose Us?</h3>
+            <p>✅ Expert Visa Consultation</p>
+            <p>✅ Seamless Flight and Hotel Bookings</p>
+            <p>✅ Personalized Travel and Study Abroad Services</p>
+            <p>✅ Professional and Experienced Team</p>
+
+                    
+        <p> At Zhinos Empire Ltd, your satisfaction is our priority!</p>
+        </div>
+        </div>
+    </div>
+</section><br><br>
+
+<section class="team">
+            <h2>Meet Our Team</h2>
+        <p>At Zhinos Empire Ltd, our strength lies in our leadership, a team of visionary professionals who bring years of experience and expertise to the company. Lets meet them one after another:</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/CEO.jpg') }}" alt="CEO">
+                <h3>CHINONYEREM HYACINTH</h3>
+                <p><strong>MD/CEO</strong> - Leading our mission with a vision for excellence.As the founder and visionary leader of Zhinos Empire Ltd, Chinonyerem Hyacinth has built the company into a trusted name in travel consultancy. With a deep understanding of global travel regulations and a passion for customer service, he ensures that the company remains at the forefront of the industry.
+
+                </p>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/director.jpg') }}" alt="Director">
+                <h3>OGECHI CHINONYEREM</h3>
+                <p><strong>Director</strong> - Ensuring smooth and efficient operations. A strategic thinker and key decision-maker, Ogechi Chinonyerem plays a pivotal role in shaping the company’s policies and growth strategies. Her expertise in business management and customer relations drives operational excellence.
+
+                </p>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/super.jpg') }}" alt="General Manager">
+                <h3>GODWIN GODSBRIDGE RHYTCHMAN</h3>
+                <p><strong>General Manager</strong> - Managing operations and client satisfaction. Godwin oversees the day-to-day operations, ensuring that all departments function smoothly to deliver top-tier service. His experience in travel logistics and client management makes him an integral part of the leadership team.
+
+                </p>
+            </div>
+
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/sup.jpg') }}" alt="Supervisor">
+                <h3>MICHAEL YAKUBU</h3>
+                <p><strong>Supervisor</strong> - Supervising operations. Michael is responsible for ensuring quality service delivery across all our offerings. His keen eye for detail and commitment to efficiency help maintain the company’s high standards.</p>
+          
+            </div>
+            
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/mkt_img.jpg') }}" alt="CS">
+                <h3>ONYEKACHI JUNIOR ONYEKACHI</h3>
+                <p><strong>Customer Service Representative</strong> - Junior is responsible for ensuring customer service delivery across all our offerings. Just like Yakubu, his keen eye for detail and commitment to efficiency help maintain the company’s high standards, this is paramount in all our dealimgs</p>
+            </div>
+
+
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/ict.jpg') }}" alt="CS">
+                <h3>EMMANUEL C IBE</h3>
+                <p><strong>ICT</strong> - Emmanuel is responsible for ICT specifically for the development of softwares necessary for day-to-day operations. If you ever can imagine it, then Emmanuel can curate it to serve the desired need.</p>
+            </div>
+
+
+
+
+
+
+        </div>
+        
+        
+    </div>
+
+        </div>
+
+</section><br>
 {% endblock %}

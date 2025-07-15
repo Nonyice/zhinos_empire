@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Customer Reviews - Zhinos Empire{% endblock %}
+
+{% block content %}
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>We value your feedback! Share your experience with us.</p>
+
+    <form action="{{ url_for('reviews') }}" method="POST" class="review-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="review">Review:</label>
+        <textarea id="review" name="review" rows="4" required></textarea>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+        </select>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <div class="review-container">
+        <div class="review-list">
+            {% for review in reviews %}
+                <div class="review-card">
+                    <h3>{{ review[0] }}</h3>
+                    <p>{{ review[1] }}</p>
+                    <p class="stars">
+                        {% for _ in range(review[2]) %} ⭐ {% endfor %}
+                    </p>
+                    <span class="date">{{ review[3].strftime('%B %d, %Y') }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let reviewList = document.querySelector(".review-list");
+    let reviews = document.querySelectorAll(".review-card");
+
+    function cycleReviews() {
+        reviews.forEach((review, index) => {
+            setTimeout(() => {
+                review.style.opacity = "1";
+                review.style.transform = "translateY(0)";
+            }, index * 5000); // 2-second delay for each review
+        });
+
+        setTimeout(() => {
+            reviews.forEach((review) => {
+                review.style.opacity = "0";
+                review.style.transform = "translateY(10px)";
+            });
+        }, (reviews.length + 1) * 5000); // Reset after last review
+
+        setTimeout(cycleReviews, (reviews.length + 2) * 5000); // Repeat animation
+    }
+
+    cycleReviews();
+});
+</script>
+{% endblock %}

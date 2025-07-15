@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services - Zhinos Empire{% endblock %}
+
+{% block content %}
+
+<h1>Foundation Exams for Study & Travel Abroad</h1>
+
+<div class="tab-container">
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('ielts')">IELTS</div>
+        <div class="tab" onclick="showTab('toefl')">TOEFL</div>
+        <div class="tab" onclick="showTab('pte')">PTE</div>
+        <div class="tab" onclick="showTab('sat')">SAT</div>
+        <div class="tab" onclick="showTab('gre')">GRE</div>
+        <div class="tab" onclick="showTab('gmat')">GMAT</div>
+        <div class="tab" onclick="showTab('duolingo')">Duolingo</div>
+    </div>
+
+    <div id="ielts" class="tab-content active">
+        <h2>IELTS - International English Language Testing System</h2>
+        <p>The IELTS is widely recognized for English proficiency assessment, used for studying, working, or migrating to English-speaking countries.</p>
+        <ul>
+            <li><strong>Modules:</strong> Academic and General Training</li>
+            <li><strong>Sections:</strong> Listening, Reading, Writing, Speaking</li>
+            <li><strong>Scoring:</strong> Band score from 1 to 9</li>
+            <li><strong>Validity:</strong> 2 years</li>
+            <li><strong>Duration:</strong> ~2 hours 45 minutes</li>
+            <li><strong>Website:</strong> <a href="https://www.ielts.org/" target="_blank">www.ielts.org</a></li>
+           </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+
+    <div id="toefl" class="tab-content">
+        <h2>TOEFL - Test of English as a Foreign Language</h2>
+        <p>Used by over 11,000 institutions globally, the TOEFL evaluates English proficiency for academic settings.</p>
+        <ul>
+            <li><strong>Format:</strong> Internet-based (TOEFL iBT)</li>
+            <li><strong>Sections:</strong> Reading, Listening, Speaking, Writing</li>
+            <li><strong>Scoring:</strong> Total of 120 (30 per section)</li>
+            <li><strong>Validity:</strong> 2 years</li>
+            <li><strong>Duration:</strong> ~3 hours</li>
+            <li><strong>Website:</strong> <a href="https://www.ets.org/toefl" target="_blank">www.ets.org/toefl</a></li>
+        </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+
+    <div id="pte" class="tab-content">
+        <h2>PTE - Pearson Test of English</h2>
+        <p>PTE Academic is a computer-based English proficiency test accepted for university admissions and visas in several countries.</p>
+        <ul>
+            <li><strong>Sections:</strong> Speaking & Writing, Reading, Listening</li>
+            <li><strong>Scoring:</strong> 10–90 scale</li>
+            <li><strong>Computer-Based:</strong> AI Scoring</li>
+            <li><strong>Validity:</strong> 2 years</li>
+            <li><strong>Website:</strong> <a href="https://www.pearsonpte.com/" target="_blank">www.pearsonpte.com</a></li>
+        </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+
+    <div id="sat" class="tab-content">
+        <h2>SAT - Scholastic Assessment Test</h2>
+        <p>The SAT is a standardized test for college admissions in the US.</p>
+        <ul>
+            <li><strong>Sections:</strong> Reading, Writing & Language, Math</li>
+            <li><strong>Optional Essay:</strong> Discontinued since 2021</li>
+            <li><strong>Scoring:</strong> 400–1600</li>
+            <li><strong>Website:</strong> <a href="https://www.collegeboard.org/" target="_blank">www.collegeboard.org</a></li>
+        </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+
+    <div id="gre" class="tab-content">
+        <h2>GRE - Graduate Record Examination</h2>
+        <p>The GRE is required for many graduate programs worldwide, assessing verbal reasoning, quantitative skills, and analytical writing.</p>
+        <ul>
+            <li><strong>Sections:</strong> Verbal, Quantitative, Analytical Writing</li>
+            <li><strong>Scoring:</strong> 130–170 (each section)</li>
+            <li><strong>Validity:</strong> 5 years</li>
+            <li><strong>Website:</strong> <a href="https://www.ets.org/gre" target="_blank">www.ets.org/gre</a></li>
+        </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+
+    <div id="gmat" class="tab-content">
+        <h2>GMAT - Graduate Management Admission Test</h2>
+        <p>The GMAT is used for MBA and other graduate business program admissions.</p>
+        <ul>
+            <li><strong>Sections:</strong> Verbal, Quantitative, IR, AWA</li>
+            <li><strong>Scoring:</strong> 200–800</li>
+            <li><strong>Validity:</strong> 5 years</li>
+            <li><strong>Website:</strong> <a href="https://www.mba.com/" target="_blank">www.mba.com</a></li>
+        </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+
+    <div id="duolingo" class="tab-content">
+        <h2>Duolingo English Test</h2>
+        <p>This is an affordable, accessible English proficiency test accepted by thousands of universities worldwide.</p>
+        <ul>
+            <li><strong>Online:</strong> Taken at home</li>
+            <li><strong>Scoring:</strong> 10–160</li>
+            <li><strong>Validity:</strong> 2 years</li>
+            <li><strong>Website:</strong> <a href="https://englishtest.duolingo.com/" target="_blank">englishtest.duolingo.com</a></li>
+        </ul>
+        <p>Contact us for guidance, leave a request and we will be right back at you <a href='/submit_request' class="service-link">here!</a></p>
+        
+    </div>
+</div>
+
+<script>
+    function showTab(id) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        document.getElementById(id).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+
+{% endblock %}
+
+

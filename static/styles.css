@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f4f4f4;
+    height: 100%;
 }
 
 /* Header */
@@ -13,12 +14,14 @@ header {
     align-items: center;
     background: #1c1c1c;
     color: white;
-    padding: 1rem;
+    padding: 0.8rem;
+    position: relative;
 }
 
 /* Logo */
 .logo img {
     width: 100px;
+    margin-left: 35px;
 }
 
 /* Navigation */
@@ -37,14 +40,192 @@ nav ul li a {
     font-size: 18px;
 }
 
+
+nav ul li a:hover {
+    font-size: 23px;
+    color: rgb(244, 244, 17);
+}
+
+.review-link {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.review-link a {
+    text-decoration: none;
+    font-style: italic;
+    font-size: 20px;
+}
+
 .services {
     text-align: center;
     padding: 50px 20px;
+
 }
+
+.services img {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.services p{
+    text-align: justify;
+   
+}
+
+
+
+
+
+
+.container-side {
+    left: 5px;
+    position: relative;
+    width: 80px;
+    background-color: #b9bcb8;
+    padding: 5px 3px;
+    margin: 2px;
+    font-weight: bold;
+    height: auto;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 1px 2px 2px 1px;
+}
+
+.container-side a{
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    padding: 3px 8px;
+}
+
+
+.container-side:hover {
+    background-color: rgb(104, 158, 104);
+}
+
+
+
+    /* Basic styles for the news bar */
+    .news-bar {
+        overflow: hidden;
+        flex-direction: row;
+        display: flex;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        padding: 5px;
+        margin-top: -42px;
+        animation: moveNews 30s linear infinite; /* Adjust the duration as needed */
+    }
+    
+    .news-item {
+        display: inline;
+        color: white;
+        margin-top: -10px;
+        background-color: #1c1c1c;
+        padding: 8px;
+        width: 80%;
+        margin: 3px;
+        border-radius: 5px;
+    }
+    
+    /* Keyframes for the animation */
+    @keyframes moveNews {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+/* Styling for the Action Form Page */
+.login-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login-form img {
+    width: 80px;
+    height: 70px;
+}
+
+
+
+/* Form Styling */
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.login-form label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+    margin-left: 10%;
+}
+
+/* Inputs and Select */
+.login-form input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-left: 10%;
+}
+
+.login-form button {
+    width: 70%;
+    background-color: #007bff;
+    margin-left: 13.5%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login-form button:hover {
+    background-color: #14d341;
+}
+
+
 
 .services h2 {
     font-size: 36px;
     margin-bottom: 10px;
+}
+
+.services p {
+    text-align: center;
+}
+
+.services img {
+    width: 80%;
 }
 
 .service-list {
@@ -58,7 +239,7 @@ nav ul li a {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 280px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -71,6 +252,12 @@ nav ul li a {
 .service-item p {
     font-size: 16px;
     color: #555;
+    text-align: justify;
+}
+
+.service-item a {
+    text-decoration: none;
+    color: blueviolet;
 }
 
 
@@ -90,45 +277,825 @@ nav ul li a {
     width: 100%;
     
 }
-
+/* Hero Section */
 .hero {
-    background: url('../static/images/zhinos_hero1.png') no-repeat center center/cover;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    top: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(250, 5, 5);
     position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 7s infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Animation for background transition */
+@keyframes changeBackground {
+    0% {
+        background-image: url("../static/images/zhinos_hero1.PNG");
+    }
+    50% {
+        background-image: url("../static/images/zhinos_hero2.PNG");
+    }
+    100% {
+        background-image: url("../static/images/zhinos_logo.JPG");
+    }
+}
+
+/* Hero Text Styling */
+.hero-text {
     padding: 20px;
+    border-radius: 8px;
+    
 }
 
 .hero-text h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
+    font-size: 40px;
+    margin-top: 100px;
+    z-index: 20;
+    color: rgb(228, 215, 44);
 }
 
 .hero-text p {
-    font-size: 20px;
+    font-size: 24px;
+    z-index: 20;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% { opacity: 0;}
 }
 
 .cta-button {
     background: #ff6600;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 15px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 5px;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 95px;
+    animation: blink 0.5s infinite;
 }
 
 .cta-button:hover {
     background: #cc5200;
 }
+
+.container {
+    width: 700px;
+    margin-left: 30%;
+    padding: 10px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.container p {
+    text-align: justify;
+    margin-left: 0%;
+}
+
+.container img {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+/* Tile Layout */
+.tiles {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.tile {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 0%;
+}
+
+.tile p {
+    text-align: justify;
+}
+
+/* Team Grid */
+.team-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about {
+    max-width: 800px;
+    margin-left: 32%;
+}
+
+.about .container {
+    margin-left: 0;
+    width: 100%;
+}
+
+.team {
+    flex-direction: column;
+    display: flex;
+    max-width: 800px;
+    margin-left: 32%;
+}
+
+.team h2 {
+    text-align: center;
+}
+
+.team p {
+    text-align: justify;
+}
+
+.team-member {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 850px;
+    height: auto;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.team-member img {
+    width: 100%;
+    min-height: 650px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #666;
+    text-align: justify;
+}
+
+.team-member strong {
+    color: cadetblue;
+}
+
+/* Styling for the Action Form Page */
+.action-form {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.action-form h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.action-form p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+.action-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.action-form label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Inputs and Select */
+.action-form input,
+.action-form select,
+.action-form textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.action-form input:focus,
+.action-form select:focus,
+.action-form textarea:focus {
+    border-color: #007bff;
+}
+
+/* Textarea */
+.action-form textarea {
+    resize: none;
+}
+
+/* Submit Button */
+.action-form button {
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-form button:hover {
+    background-color: green;
+}
+
+
+
+
+
+.action-form {
+    width: 90%;
+    padding: 20px;
+}
+
+.action-form h2 {
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+
+.admin-actions {
+    margin-top: 100px;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 33%;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.admin-actions a {
+    text-decoration: none;
+}
+
+.admin-actions a:hover {
+    color: #14d341;
+}
+
+
+
+.admin-role {
+    box-shadow: 1px 2px 2px 1px;
+    width: 50%;
+    text-align: center;
+    margin: 40px auto;
+    padding: 10px 8px;
+    border-radius: 5px;
+}
+
+.user-session {
+    margin-top: 50px;
+    position: absolute;
+    margin-left: 95%;
+}
+
+.user-session a {
+    text-decoration: none;
+    color: rgb(224, 242, 62);
+}
+
+.session-user {
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 22px;
+    margin-left: 10px;
+    color: rgb(40, 49, 150);
+}
+
+.admin-panel {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-panel h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.admin-panel p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+.admin-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.admin-panel label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.admin-panel input[type="checkbox"] {
+    margin-left: -240px;
+    display: flex;
+    margin-top: -15px;
+    height: 20px;
+}
+
+/* Inputs and Select */
+.admin-panel input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.admin-panel form select {
+    padding: 10px;
+}
+
+
+
+/* Submit Button */
+.admin-panel button {
+    background: #1d6dc4;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.admin-panel button:hover {
+    background-color: green;
+}
+
+.contact {
+    text-align: center;
+    padding: 40px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    text-align: justify;
+    gap: 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.contact-item i {
+    font-size: 22px;
+    color: #007bff;
+
+}
+
+.contact-item a {
+    text-decoration: none;
+}
+
+.line {
+    min-width: 600px;
+    background-color: black;
+    height: 2px;
+    margin-bottom: 10px;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.request-log {
+    margin-top: 70px;
+    padding-bottom: 40px;
+    margin-bottom: 150px;
+}
+.request-log p {
+    margin-left: 50px;
+    color: rgb(60, 60, 2);
+}
+
+
+
+.request-log h2 {
+    margin-left: 5%;
+    margin-bottom: 80px;
+}
+
+
+
+table {
+    width: 95%;
+    
+    margin-left: 2%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    text-align: justify;
+    border-bottom: 1px solid #ddd;
+    height: auto;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e9e9e9;
+}
+
+.manage_reviews {
+    margin: 0;
+    padding: 10px;
+    height: auto;
+    padding-bottom: 80px;
+    margin-top: 40px;
+    flex-direction: column;
+    display: block;
+    position: relative;
+}
+
+.manage_reviews h2{
+    margin-bottom: 24px;
+}
+
+.manage_reviews p {
+    margin-bottom:250px;
+}
+
+
+.reviews {
+    text-align: center;
+    padding: 40px;
+
+}
+
+.review-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    padding-right: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-form label, .review-form select, .review-form input, .review-form textarea, .review-form button {
+    display: block;
+    width: 98%;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: justify;
+    border-radius: 8px;
+}
+
+.review-form button {
+    background: #ff9800;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.review-form button:hover {
+    background: #e68900;
+}
+
+.delete_user {
+    margin: 0;
+    padding: 10px;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.delete_user h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.delete_user form {
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 40px;
+}
+
+.delete_user form label {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.delete_user select { 
+    padding: 4px 9px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.delete_user form button {
+    margin: 10px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.delete_user form button:hover {
+    color: red;
+    background-color: #1c1c1c;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    height: auto;
+    width: 450px; 
+    margin-left: 35.5%;
+}
+
+.review-list {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.review-card {
+    background: white;
+    position: absolute;
+    width: 95%;
+    padding: 10px;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s, transform 1s;
+    text-align: justify;
+}
+
+.review-card p {
+    text-align: justify;
+    width: 420px;
+    height: auto;
+    font-family: cursive
+}   
+
+.stars {
+    color: #ff9800;
+    font-size: 20px;
+
+}
+
+.date {
+    font-size: 12px;
+    color: #888;
+    padding-bottom: 5px;
+}
+
+.foundation-exams {
+    padding: 20px;
+    text-align: center;
+}
+
+.exam-list p {
+    text-align: justify;
+}
+.exam-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.exam-item {
+    width: 500px;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.exam-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.exam-link:hover {
+    background-color: #0056b3;
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 1650px; /* Adjust based on your layout */
+    height: 500px; /* Set a fixed height */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    padding: 5px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 75%;
+    transform: translateX(-50%);
+    background: rgba(117, 108, 108, 0.7);
+    color: white;
+    padding: 10px 15px;
+    font-size: 22px;
+    border-radius: 5px;
+    text-align: center;
+    width: 320px;
+    animation: blink 5s infinite;
+}
+
+/* Show the first slide initially */
+.slide:first-child {
+    opacity: 1;
+}
+
+
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: #eaeaea;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab.active {
+    background: #fff;
+    border: 2px solid #ccc;
+    border-bottom: none;
+}
+
+.tab-content {
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-top: none;
+    display: none;
+}
+
+.tab-content li {
+    margin: 10px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+
+
+
+.flash-success {
+    background-color: #f1f7f2;
+    color: #14d341;
+    margin-left: 1cqh;
+}
+
+.flash-info {
+    background-color: #f4f8f5;
+    color: #5b44b3;
+    margin-left: 10px;    
+}
+
+.flash-danger {
+    background-color: white;
+    color: red;
+    margin-left: 10px; 
+}
+
+
+footer .nav-list2  {
+    list-style: none;
+    display: flex;
+    float: right;
+}
+
+footer .nav-list2 li {
+    margin: 0 15px;
+}
+
+footer .nav-list2 li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+
 
 
 
@@ -136,11 +1103,27 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    margin-top: 30px;
-    height: 150px;
-    padding-top: 45px;
+    margin-top: auto;
+    height: 240px;
+    padding-top: 5px;
     padding: 5px 0px;
+    width: 99%;
+    margin-left: 4px;
+    border-radius: 8px;
 }
+
+footer nav {
+    float: right;
+}
+
+.nav-list2 {
+    font-size: 10px;
+}footer .nav-list2 a:hover {
+    color: #c38f8f;
+}
+
+
+
 
 
 
@@ -148,7 +1131,7 @@ footer {
     font-size: .9rem;
     color: #bcb8b8;
     line-height: 1.6;
-    margin-top: 0;
+    margin-top: 10px;
     width: 50%;
     text-align: center;
     margin-left: 25%;
@@ -163,9 +1146,9 @@ footer {
     background-color: black;
     margin-top: 0px;
     position: relative;
-    font-size: 12px;
+    font-size: 14px;
     padding: 1px;
-    height: 40px;
+    height: 50px;
 }
 
 .footer-socials {
@@ -181,52 +1164,240 @@ footer {
     width: 30px;
 }
 
+.terms {
+    text-align: center;
+    margin-left: -2%;
+}
+
+.terms ul li {
+    list-style: none;
+    margin: 10px;
+    display: inline flex;
+}
+
+.terms ul a {
+    text-decoration: none;
+}
+
 
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    nav ul {
-        display: none;
-        width: 20%;
-        text-align: center;
-        position: absolute;
-        top: 86px;
-        left: 5px;
-        background: #333;
-        border-radius: 5px;
-        z-index: 10;
-    }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+footer {
+    height: auto;
+    margin-top: auto;
+}
 
-    nav ul li a {
-        font-size: 20px;
-        padding: 5px;
-        display: flex;
-    }
+.footer-note p {
+    text-align: justify;
+}
 
-    nav ul li a:hover {
-        color: cornflowerblue;
-    }
+    footer .nav-list2  {
+    position: absolute;
+    padding: 2px;
+    font-size: 8px;
+    width: auto;
+    margin-left: 18%;
+}
 
-    .hamburger {
-        display: flex;
-        width: 45px;
-        padding-left: 5px;
-    }
+footer .nav-list2 a:hover {
+    color: #c38f8f;
+}
+
+
+
+nav ul {
+    display: none;
+    width: 18%;
+    text-align: center;
+    position: absolute;
+    top: 86px;
+    left: 5px;
+    background: #e6ad87;
+    border-radius: 8px;
+    z-index: 20;
+}
+
+
+.footer-note {
+    margin-top: 50px;
+}
+
+.container {
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 10px;
+    width: 99%;
+}
+
+.container p {
+    margin-left: 5px;
+    padding-right: 20px;
+}
+
+.tile {
+    margin-left: 0;
+}
+
+.news-bar {
+    display: flex;
+    width: auto;
+}
+
+.news-item {
+    font-size: small;
+    padding: 2px;
+    width: auto;
+}
+
+.container-side {
+    width: 70px; 
+}
+
+
+.tiles {
+    width: 95%;
+    padding: 2px;
+    margin-left: 5px;
+}
+
+.services {
+    padding: 2px;
+}
+
+.services p {
+    text-align: justify;
+}
+
     
+.service-item {
+    width: 98%;
+}
 
+.services img {
+    width: 100%;
+}
 
-    nav.active ul {
-        display: block;
+.team{
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.team p {
+    text-align: justify;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+    
+.team-member {
+    width: 650px;
     }
 
-    footer {
-        margin-top: 150px;
-        height: auto;
-        margin-top: auto;
-    }
+.exam-item {
+    width: 100%;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    font-size: 18px;
+    padding: 5px;
+    display: flex;
+}
+
+nav ul li a:hover {
+    color: cornflowerblue;
+    font-size: 20px;
+}
+
+.hamburger {
+    display: flex;
+    width: 45px;
+    padding-left: 5px;
+}
+
+
+
+nav.active ul {
+    display: block;
+}
+
+.user-session {
+    margin-top: 66px;
+    position: absolute;
+    margin-left: 90%;
+}
+
+
+
+
+    .admin-actions {
+        width: 100%;
+        margin-left: 65px;
+}
+
+.admin-panel {
+    width: 90%;
+}
+
+.review-container {
+  margin-left: 8%;
+}
+
+.login-form p {
+    font-size: 14px;
+}
+
+th, td {
+    padding: 2px;
+    font-size: 9px;
+    width: auto;
+}
+
+table {
+    width: 98%;
+    padding: 0%;
+}
+
+.request-log p {
+    margin-left: 12px;
+}
+
+
+.about {
+width: 100%;
+margin-left: 0%;
+}
+
+.terms {
+    margin-left: -6%;
+}
+
+.caption {
+    border-radius: 0px;
+    padding: auto;
+    margin: auto;
+    width: 100px;
+    font-size: 16px;
+}
+
+.slider-container {
+    width: 100%;
+    padding: auto;
+}
+
+.tab-container {
+    margin-left: 2%;
+    width: 97.5%;
+}
+
+.action-form {
+    margin: 0;
+}
+
 
 }

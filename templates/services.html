@@ -1,37 +1,105 @@
 {% extends "base.html" %}
 
-{% block title %}Our Services - Zhinos Empire Ltd{% endblock %}
+{% block title %}Our Services - Zhinos Empire{% endblock %}
 
 {% block content %}
+
+
+
 <section class="services">
+    
     <h2>Our Services</h2>
     <p>We offer a range of professional services to make your travels and inquiries hassle-free.</p>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/visa.jpg') }}" alt="Visa Processing">
+                <span class="caption">Visa Processing Made Easy</span>
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/flight.jpg') }}" alt="Flight Booking">
+                <span class="caption">Book Your Flights Hassle-Free</span>
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/exam.jpg') }}" alt="Exam Registration">
+                <span class="caption">Register for Exams Seamlessly</span>
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/hotel.jpg') }}" alt="Hotel Reservation">
+                <span class="caption">Find the Perfect Stay</span>
+            </div>
+
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/serv_img.png') }}" alt="Here to serve">
+                <span class="caption">We are here to serve you!</span>
+            </div>
+        </div>
+    </div>
+   
+    
 
     <div class="service-list">
         <div class="service-item">
             <h3>📅 Book Appointments</h3>
             <p>Schedule consultations with our team for seamless processing.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
         </div>
 
         <div class="service-item">
             <h3>🛂 Visa Inquiries</h3>
             <p>Get expert advice and support for your visa applications.</p>
+            <a href='/visa-types' class="service-link">Check Visa Types</a>
         </div>
 
         <div class="service-item">
             <h3>🏨 Hotel Reservations</h3>
             <p>Secure the best accommodations at top-rated hotels.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
         </div>
 
         <div class="service-item">
             <h3>✈️ Flight Booking</h3>
             <p>Find and book flights at the best prices with our assistance.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
         </div>
 
         <div class="service-item">
             <h3>🌍 Travel Consultation</h3>
             <p>Plan your trips with our expert travel consultants.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
+        </div>
+
+        <div class="service-item">
+            <h3>🎓 Study Abroad</h3>
+            <p>Get guidance on studying in top universities around the world.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
+        </div>
+
+        <div class="service-item">
+            <h3>📝 Admission Processing</h3>
+            <p>We assist in securing admissions into prestigious institutions.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
+        </div>
+
+        <div class="service-item">
+            <h3>📚 Study Materials</h3>
+            <p>Access high-quality study materials to support your academic journey.</p>
+            <a href='/submit_request' class="service-link">Request Service</a>
+        </div>
+
+        <div class="service-item">
+            <h3>🏫 Foundation Courses</h3>
+            <p>Enroll in foundational programs that prepare you for higher education.</p>
+            <a href="{{ url_for('foundation_exams') }}">Foundation Exams</a>
+
+        </div>
+
+        <div class="service-item">
+            <h3>📝 Exams & Tuition</h3>
+            <p>Prepare for entrance exams and receive expert tuition services.</p>
+            <a href="{{ url_for('foundation_exams') }}">Exams & Tuition</a>
         </div>
     </div>
 </section>
+
 {% endblock %}

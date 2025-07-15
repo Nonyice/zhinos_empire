@@ -1,13 +1,18 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block title %}Home - Zhinos Empire Ltd{% endblock %}
-
-{% block content %}
+    <title>Visa Types and Countries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+<body>
 <section class="hero">
     <div class="hero-text">
-        <h1>Welcome to Zhinos Empire</h1>
-        <p>.....Your satisfaction is our priority.</p>
+        <h1><i>Welcome to Our Official Website</i></h1>
         <a href="{{ url_for('services') }}" class="cta-button">Get Started</a>
     </div>
 </section>
-{% endblock %}
+</body>
+</html>

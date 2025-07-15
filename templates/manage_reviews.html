@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Manage Reviews{% endblock %}
+{% block content %}
+
+<div class="manage_reviews">
+<h2>Pending Reviews</h2>
+{% if reviews %}
+    <ul class="review-list">
+    {% for review in reviews %}
+        <li>
+            <p><strong>{{ review[1] }}</strong> - {{ review[3] }} stars</p>
+            <p>{{ review[2] }}</p>
+            <p><em>{{ review[4] }}</em></p>
+            <form method="POST">
+                <input type="hidden" name="review_id" value="{{ review[0] }}">
+                <button type="submit" name="action" value="approve">Approve</button>
+                <button type="submit" name="action" value="delete">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No pending reviews.</p>
+    
+{% endif %}
+
+<div class="return" style="width: 10%; background-color: blue; display: flex; float: right; margin-right: 3%; padding: 5px 8px; margin-top: -20px"><a href="/dashboard">Return</a></div>
+</div>
+{% endblock %}

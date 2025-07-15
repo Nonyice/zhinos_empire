@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.cloudwares.com/css/webfonts.css">
+    <script src="{{ url_for('static', filename='/slider.js') }}"></script>
+
 
 </head>
 <body>
@@ -14,7 +16,10 @@
     <header>
         <div class="logo">
             <img src="{{ url_for('static', filename='images/zhinos_logo.jpg') }}" alt="Zhinos Empire Ltd">
+            <p style="font-size: 12px; animation: blink 6s infinite; margin-top: 5px;
+}">DIGNITY, HONESTY & INTEGRITY</p>
         </div>
+        
         <nav>
             <ul class="nav-list">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -22,25 +27,95 @@
                 <li><a href="{{ url_for('services') }}">Services</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
+       
         </nav>
+
+
         <!-- Hamburger Menu Icon for Mobile -->
         <div class="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+
+        <div class="user-session">
+            {% if 'user_id' in session %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
     </header>
+
+    <section class="side-bar">
+        <div class="container-side">
+            <a href="/admin">Admin</a>
+        </div>
+
+        <div class="container-side">
+            <a href="/user">User</a>
+        </div>
+    </section>
+   
+
+        <div class="news-bar">
+            <div class="news-item">--What we do:</div>
+            <div class="news-item">--Visa Enquiries</div>
+            <div class="news-item">--Hotel Reservations</div>
+            <div class="news-item">--Flight Bookings</div>
+            <div class="news-item">--Travel Consultation</div>
+            <div class="news-item">...Book an Appointment today</div>
+        </div>
+
+        
+            
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+    <script>
+        setTimeout(() => {
+            const flashMessages = document.querySelectorAll('.flash-message');
+            flashMessages.forEach(message => {
+                message.style.opacity = '0';
+                setTimeout(() => message.remove(), 500);
+            });
+        }, 5000);
+
+    </script>
+    
 
     <main>
         {% block content %}{% endblock %}
+        <div class="review-link">
+        We value our customers' review. Please leave us a review <a href="/reviews">here!.</a>
+    </div>
     </main>
 
+    
     <footer>
+        
+            <ul class="nav-list2">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+       
+        
         <div class="footer-note">
             <p>
-                <strong>Zhinos Empire</strong> -- Your ultimate destination for chic, elegant and timeless ladies' items.
-                From trendy accessories to wardrobe essentials, we bring glamour to your fingertips.
-                Shop with confidence, because you deserve the best!
+                <strong>Zhinos Empire</strong> --Zhinos Empire Ltd, is committed to providing seameless travel solutions, expert consultations,
+                and professional guidance in visa processing, admissions, and global mobility. Whether you are planning to study abroad, book a flight,
+                secure a hotel reservation, or seek expert tuition, we ensure a smooth and hassle-free experience. Your Satisfaction is Our Priority! 
+
+                
             </p>
         </div>
         <div class="footer-socials">
@@ -52,14 +127,23 @@
             
         </div>
 
-        <p>&copy; 202 Zhinos Empire: All Rights Reserved.</p>
+        <div class="terms">
+            <ul>
+                <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li> |
+                <li><a href="{{ url_for('terms_and_conditions') }}">Terms and Conditions</a></li>
+            </ul>
+        </div>
 
+        
+    <div class="copyright">
+        <p>&copy; {{ current_year }} Zhinos Empire Ltd: All Rights Reserved.</p>
+    </div>
         <div class="poweredby">
             <p>Powered by --The PlimsolTech Group--</p>
         </div>
-    </footer>
-    >
+</footer>
 
     <script src="{{ url_for('static', filename='toggle.js') }}"></script>
+    <script src="{{ url_for('static', filename='review.js') }}"></script>
 </body>
 </html>
